@@ -1,8 +1,19 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+Deno.serve((req) => {
+  if (req.headers.get('upgrade') !== 'websocket') {
+    return new Response(null, { status: 501 });
+  }
+  const { socket, response } = Deno.upgradeWebSocket(req);
 
-// Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+  socket.addEventListener('open', () => {
+    console.log('A client just connected!');
+  });
+  socket.addEventListener('message', (event) => {
+    if (event.data === 'hey') {
+      socket.send('yo');
+    }
+  });
+  socket.addEventListener('close', () => {
+    console.log('Disconnected!');
+  });
+  return response;
+});
