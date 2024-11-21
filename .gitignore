@@ -33,7 +33,7 @@ newrelic_agent.log
 /out/
 
 # production
-/build
+**/build
 
 # misc
 .DS_Store
