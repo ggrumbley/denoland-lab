@@ -28,12 +28,16 @@ yalc.lock
 # logging
 newrelic_agent.log
 
-# next.js
+# Next.js
 /.next/
 /out/
 
+# Astro
+*/.astro
+
 # production
 **/build
+**/dist
 
 # misc
 .DS_Store
