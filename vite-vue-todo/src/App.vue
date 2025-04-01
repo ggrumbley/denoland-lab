@@ -1,11 +1,9 @@
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
   import TaskForm from './components/TaskForm.vue'
-import { type Task, type TaskFilter, TASK_FILTERS } from './app.types';
-import TaskList from './components/TaskList.vue';
-import FilterButton from './components/FilterButton.vue';
-
-
+  import { type Task, type TaskFilter, TASK_FILTERS } from './app.types';
+  import TaskList from './components/TaskList.vue';
+  import FilterButton from './components/FilterButton.vue';
 
 
   const message = ref("Hello World")

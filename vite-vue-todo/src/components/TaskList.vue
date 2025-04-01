@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Task } from '../app.types';
+  import type { Task } from '../app.types';
 
   const props = defineProps<{ tasks: Task[]}>()
   const emits = defineEmits<{

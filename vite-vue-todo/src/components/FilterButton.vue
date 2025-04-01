@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { type TaskFilter, TASK_FILTERS } from '../app.types';
+  import { type TaskFilter } from '../app.types';
 
-const props = defineProps<{
-  filter: TaskFilter
-  currentFilter: TaskFilter
-}>()
+  const props = defineProps<{
+    filter: TaskFilter
+    currentFilter: TaskFilter
+  }>()
 
-const emits = defineEmits<{
-  setFilter: [filter: TaskFilter]
-}>()
+  const emits = defineEmits<{
+    setFilter: [filter: TaskFilter]
+  }>()
 </script>
 <template>
   <button
